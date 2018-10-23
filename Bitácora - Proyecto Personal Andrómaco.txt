@@ -1,0 +1,69 @@
+Día 1 -  Planteamiento general - 27/09/2018
+
+Propósito
+
+Ser un experto en el manejo de grandes volúmenes de datos en Salesforce + Einstein Analitics + Python
+
+Objetivo:
+
+Crear una demo de la integración de Salesforce Python y Einstein Analitics para el cliente Andrómaco y sus reportes de casos
+
+Objectivos específicos
+
+Analizar el requerimientos de reportes de casos, categorías de casos y subcategorías de casos
+Generar una visión general del requerimiento
+Crear reportes planos en salesforce con la información requerida
+Crear Script en Python para la descarga de los reportes
+Generar Csv en python con la información manipulada en Panda y su función Melt
+Subir la información a Einstein Analitics a través de un Script en Python
+Crear Dashboard con la información requerida
+
+
+Dia 2 - Parte 1 - En Xappia - 28/09/2018
+
+Realicé algunas pruebas sobre un entorno Ubuntu en windows 10.
+
+Los siguiente pasos serán:
+- Agregar header al csv
+- Modificar todos los false por 0
+- Modificar todos los true por 1
+- Modificar todos los true de la columna Cat Contenido a "Contenido"
+- Hacer unPivot utilizando Panda - Melt en python
+	- De la columna Value luego del unPivot Filtrar solo por los valores iguales a 1
+
+Día 3 - Home - 29/09/2018
+
+Definición de campos de informes:
+
+- Los header serán numéricos y se generará automáticamente un csv informativo con el número de header
+
+
+Día 4 - Home - 01/10/2018
+
+Tuve la necesidad de ver si era posible crear una tabla a partir de un csv que es en el formato que yo lo recibo de Salesforce.
+
+Si es posible e hice de inmediato una pequenas pruebas con pd.melt de Pandas para el unpivot.
+
+Día 5 - Home 08/10/2018
+
+Generé 2 listas para Id_vars y para value_vars que son parámetros de melt de pandas.
+
+El filtro para traer solo verdaderos está mal entendiendo que puede ser una tabla dinámica en cuanto a la cantidad de columnas, siempre debe contar el total de columnas y aplicar el filtro a la última.
+
+PARA HACER: La Columna referida a la categoría debe ser también mareada, es decir, el nombre de la columna no puede cambiar o se debe ejecutar un manejo de errores que indique que la categoría ha cambiado de nombre o es una nueva categoría (CREAR UNA NUEVA CLASE PARA PODER INCORPORAR NUEVAS CATEGORIAS). El tema es:
+	- Se debe buscar la columna que tiene el nombre de la categoria
+	- Cambiar el valor de todos los valores de los registros de esa columna al nombre de la categoría
+	-Guardar
+	*ESTO SERÁ USADO EN EL MOMENTO DE LA CREACIÓN DE LOS INFORMES.
+
+
+También al momento de descargar todos los informes y ser tratados, se deben unir todos en un solo CSV.
+
+FORMATO: El formato de todos los informes debe ser el mismo hasta la columna de la categoría, y a partir de ahí si el número de columnas variar
+
+
+
+
+
+
+
